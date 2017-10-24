@@ -1,0 +1,10 @@
+<a href="/logout">Logout</a> | <a href="/activity">Bright Ideas</a>
+
+@{
+    <p>Name:@ViewBag.Details.name</p>
+    <p>Alias:@ViewBag.Details.alias</p>
+    <p>Email:@ViewBag.Details.email</p>
+    <hr>
+    <p>Total Number of Posts:@ViewBag.Details.ideas.Count</p>
+     <p>Total Number of Likes:@ViewBag.Details.liked.Count</p>
+}

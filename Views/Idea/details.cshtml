@@ -1,0 +1,71 @@
+<a href="/logout">Logout</a> | <a href="/activity">Bright Ideas</a>
+<hr>
+
+<table  class="table">
+    @{      
+        
+        
+            <tr>
+                <td>
+                    <a href="/users/@ViewBag.Details.author.userid">@ViewBag.Details.author.name</a> says
+                </td>
+                <td>
+                    <p> @ViewBag.Details.idea</p>
+                </td>
+                @if(@ViewBag.Details.userid==ViewBag.User){
+                <td>
+                    <a href="/delete/@ViewBag.Details.ideasid">Delete</a>
+                </td>
+                }
+            </tr>
+           
+        
+        
+    }
+</table> 
+
+
+<h3>People who liked this post:</h3>
+
+
+
+        <table class="table">
+            <tr>
+                <th>
+                    Alias
+                </th>
+                <th>
+                    Name
+                </th>
+            </tr>
+@if(@ViewBag.Details.liked.Count>0)
+{
+    foreach(var liked in @ViewBag.Details.liked)
+    {
+            <tr>
+               <td>
+                   @liked.User.alias
+               </td>
+               <td>
+                   @liked.User.name
+               </td>
+            </tr>
+       
+    }
+}
+@if(@ViewBag.Details.liked.Count>0)
+{
+    foreach(var liked in @ViewBag.Alllikes)
+    {
+            <tr>
+               <td>
+                   @liked.user.name
+               </td>
+               <td>
+                   @liked.User.name
+               </td>
+            </tr>
+       
+    }
+}
+ </table>

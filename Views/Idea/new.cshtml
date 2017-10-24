@@ -1,0 +1,39 @@
+<h1>Dojo Activity Center</h1><a href="/logout">Logout</a> | <a href="/activity">Home</a>
+<hr>
+@{      
+        foreach(var error in ViewBag.errors)
+        {
+            
+            foreach(var each1 in error.Errors){
+                <p>@each1.ErrorMessage</p>
+        }
+        }
+        
+}
+<Form action="create" name="create" method="post">
+    <Table>
+        <tr>
+            <td>Title:</td><td><input type="text" name="title"></td>
+        </tr>
+        <tr>
+            <td>Time:</td><td><input type="time" name="time"></td>
+        </tr>
+        <tr>
+            <td>Date:</td><td><input type="date" name="date"></td>
+        </tr>
+        <tr>
+            <td>Duration:</td><td><input type="number" name="duration"></td>
+            <td><select name="units">
+                <option value="days">Days</option>
+                <option value="hours">Hours</option>
+                <option value="minutes">Minutes</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Description:</td><td><textarea name="description" id="" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+    <td><input type="submit" value="Create Activity"></td>
+        </tr>
+    </Table>
+</Form>

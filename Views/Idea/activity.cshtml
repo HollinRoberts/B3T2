@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{      
+        foreach(var error in ViewBag.errors)
+        {
+            
+            foreach(var each1 in error.Errors){
+                <p>@each1.ErrorMessage</p>
+        }
+        }
+        
+}
+ 
+
+<p>Welcome @ViewBag.Name</p>
+<a href="/logout">Logout</a>
+<hr>
+<form action="create" name="create" method="post">
+    <input type="text" name="idea" value="Post something witty here...">
+    <input type="submit" value="Idea!">
+</form>
+
+ <table  class="table">
+    @{      
+        foreach(var idea in ViewBag.AllIdeas)
+        {
+            <tr>
+                <td>
+                    <a href="/users/@idea.author.userid">@idea.author.alias</a> says
+                </td>
+                <td>
+                    <p> @idea.idea</p>
+                </td>
+                @if(idea.userid==ViewBag.User){
+                <td>
+                    <a href="/delete/@idea.ideasid">Delete</a>
+                </td>
+                }
+            </tr>
+            <tr>
+                <td>
+                    <a href="/like/@idea.ideasid">Like</a>
+                </td>
+                <td>
+                    <a href="/bright_ideas/@idea.ideasid">@idea.liked.Count People</a> Like this.
+                </td>
+            </tr>
+        }
+        
+    }
+</table> 
+
+
+   
+</table>
+

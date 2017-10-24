@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <DebugType>portable</DebugType>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>B3T2</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>B3T2</PackageId>
+    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="microsoft.aspnetcore.identity.entityframeworkcore" Version="1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.1" />
+    <PackageReference Include="MySql.Data" Version="7.0.7-*" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="7.0.7-*" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.1.0-*" />
+  </ItemGroup>
+</Project>
